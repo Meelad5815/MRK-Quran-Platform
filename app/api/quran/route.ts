@@ -8,4 +8,8 @@ export async function GET() {
   } catch (error) {
     return NextResponse.json({ error: (error as Error).message }, { status: 502 });
   }
+import { surahList } from '@/lib/quran-data';
+
+export async function GET() {
+  return NextResponse.json({ data: surahList });
 }

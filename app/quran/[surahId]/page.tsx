@@ -26,6 +26,17 @@ export default function SurahPage({ params }: { params: { surahId: string } }) {
   if (loading || !surah) {
     return <div className="rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-800">Loading surah...</div>;
   }
+import { useMemo, useState } from 'react';
+import { AudioPlayer } from '@/components/audio-player';
+import { AyahCard } from '@/components/ayah-card';
+import { surahList } from '@/lib/quran-data';
+
+export default function SurahPage({ params }: { params: { surahId: string } }) {
+  const surahId = Number(params.surahId);
+  const surah = surahList.find((s) => s.id === surahId) ?? surahList[0];
+  const [showTranslations, setShowTranslations] = useState(true);
+
+  const playlist = useMemo(() => surah.ayahs.map((ayah) => ayah.audioUrl), [surah]);
 
   return (
     <div className="space-y-4">
