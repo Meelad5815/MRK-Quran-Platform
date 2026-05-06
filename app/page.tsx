@@ -1,3 +1,6 @@
+import { DailyAyahCard } from '@/components/daily-ayah-card';
+import { SearchBar } from '@/components/search-bar';
+import { SurahNavigator } from '@/components/surah-navigator';
 import Link from 'next/link';
 import { DailyAyahCard } from '@/components/daily-ayah-card';
 import { SearchBar } from '@/components/search-bar';
@@ -9,6 +12,7 @@ export default function HomePage() {
       <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-800">
         <h1 className="text-2xl font-bold">MRK Quran Explorer</h1>
         <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+          Fast, mobile-first Quran app with live Quran data from api.alquran.cloud, translations, recitation, and search.
           Fast, mobile-first Quran app with translations, tafsir, bookmarks, notes, progress tracking, and offline-ready architecture.
         </p>
         <div className="mt-4">
@@ -17,6 +21,7 @@ export default function HomePage() {
       </section>
 
       <DailyAyahCard />
+      <SurahNavigator />
 
       <section className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-700 dark:bg-slate-800">
         <h2 className="text-lg font-semibold">Surah Navigator</h2>

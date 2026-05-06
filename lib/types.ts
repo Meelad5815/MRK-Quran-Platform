@@ -30,6 +30,7 @@ export type Surah = {
   id: number;
   nameArabic: string;
   nameEnglish: string;
+  revelationType: string;
   revelationType: 'Meccan' | 'Medinan';
   totalAyahs: number;
   ayahs: Ayah[];
